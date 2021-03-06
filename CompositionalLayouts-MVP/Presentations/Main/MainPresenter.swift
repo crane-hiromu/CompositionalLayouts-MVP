@@ -11,8 +11,14 @@ import Foundation
 protocol MainPresentable: AnyObject {
     var sections: [MainSection] { get }
     
+    // Life Cycle
     func viewDidLoad()
-    func selectItem(at indexPath: IndexPath)
+    
+    // Section Action
+    func didSelectBanner(with baneer: Banner)
+    func didSelectTitle(with infomation: Infomation)
+    func didSelectEdit(with infomation: Infomation)
+    func didSelectItem(with item: Item)
 }
 
 // MARK: - Presenter
@@ -37,7 +43,19 @@ extension MainPresenter: MainPresentable {
         
     }
     
-    func selectItem(at indexPath: IndexPath) {
-        userInterface?.presentSubView()
+    func didSelectBanner(with baneer: Banner) {
+        
+    }
+    
+    func didSelectTitle(with infomation: Infomation) {
+        
+    }
+    
+    func didSelectEdit(with infomation: Infomation) {
+        
+    }
+    
+    func didSelectItem(with item: Item) {
+        
     }
 }

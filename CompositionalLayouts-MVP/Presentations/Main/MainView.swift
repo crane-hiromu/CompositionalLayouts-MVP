@@ -14,7 +14,8 @@ final class MainView: UIView {
 
     private(set) lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        // todo register cell
+        collectionView.register(type: MainBannerCell.self)
+        collectionView.register(type: MainTitleCell.self)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(collectionView)
         return collectionView
