@@ -5,4 +5,9 @@
 //  Created by Tsuruta, Hiromu | ECID on 2021/03/06.
 //
 
-import Foundation
+import UIKit
+
+// MARK: - Controller
+final class SubViewController: UIViewController {
+    
+}
