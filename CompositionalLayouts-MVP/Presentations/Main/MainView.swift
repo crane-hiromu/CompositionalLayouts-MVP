@@ -49,6 +49,6 @@ final class MainView: UIView {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("fatalError TimelineSearchConditionView")
+        fatalError("fatalError MainView")
     }
 }
