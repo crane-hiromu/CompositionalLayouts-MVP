@@ -16,8 +16,10 @@ final class MainView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.register(type: MainBannerCell.self)
         collectionView.register(type: MainTitleCell.self)
+        collectionView.register(type: MainEditCell.self)
+        collectionView.register(type: MainItemCell.self)
+        collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(collectionView)
         return collectionView
     }()
 
@@ -37,6 +39,7 @@ final class MainView: UIView {
         self.collectionView.dataSource = controller
         self.collectionView.delegate = controller
         
+        addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),

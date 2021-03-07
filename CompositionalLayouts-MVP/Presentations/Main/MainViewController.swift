@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import SafariServices
 
 // MARK: - UserInterface
 protocol MainUserInterface: UIViewController {
-    func presentSubView()
+    // UI
+    func initialize()
+    func reloadData()
+    
+    // Router
+    func presentWebView(with url: URL)
+    func presentAlert(with item: Item)
+    func presentSheet(with infomation: Infomation)
 }
 
 // MARK; - ViewController
@@ -28,6 +36,11 @@ final class MainViewController: UIViewController {
     }
     
     // MARK: Override
+    
+    override func loadView() {
+        super.loadView()
+        presenter.loadView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +51,34 @@ final class MainViewController: UIViewController {
 // MARK: - MainUserInterface
 extension MainViewController: MainUserInterface {
     
-    func presentSubView() {
-        present(SubViewController(), animated: true)
+    // MARK: UI
+    
+    func initialize() {
+        view = mainView
+    }
+    
+    func reloadData() {
+        mainView.collectionView.reloadData()
+    }
+    
+    // MARK: Router
+    
+    func presentWebView(with url: URL) {
+        let vc = SFSafariViewController(url: url)
+        vc.modalPresentationStyle = .pageSheet
+        present(vc, animated: true)
+    }
+    
+    func presentAlert(with item: Item) {
+        let vc = UIAlertController(title: item.name, message: nil, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "閉じる", style: .default))
+        present(vc, animated: true)
+    }
+    
+    func presentSheet(with infomation: Infomation) {
+        let vc = UIAlertController(title: infomation.title, message: nil, preferredStyle: .actionSheet)
+        vc.addAction(UIAlertAction(title: "閉じる", style: .default))
+        present(vc, animated: true)
     }
 }
 

@@ -7,14 +7,14 @@
 
 import Foundation
 
-// MARK: - Model
-struct Infomation {
+// MARK: - Entity
+struct Infomation: MainEntity {
     let id: Int
     let title: String
     let items: [Item]
 }
 
-struct Item {
+struct Item: MainEntity {
     let name: String
     let imageURL: URL?
 }

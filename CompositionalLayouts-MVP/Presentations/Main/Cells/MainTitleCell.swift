@@ -36,10 +36,10 @@ final class MainTitleCell: UICollectionViewCell {
     }
 }
 
-// MARK: - Public
-extension MainTitleCell {
+// MARK: - MainCell
+extension MainTitleCell: MainCell {
     
-    func configure(with title: String) {
-        titleLabel.text = title
+    func configure(with entity: Infomation) {
+        titleLabel.text = entity.title
     }
 }

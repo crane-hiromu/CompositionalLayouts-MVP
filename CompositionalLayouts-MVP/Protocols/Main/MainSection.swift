@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: Section Protocol
+// MARK: - Section Protocol
 protocol MainSection {
     // セクションのアイテム数
     var numberOfItems: Int { get }

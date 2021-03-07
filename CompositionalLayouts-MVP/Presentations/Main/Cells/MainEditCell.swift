@@ -1,5 +1,5 @@
 //
-//  MainBannerCell.swift
+//  MainEditCell.swift
 //  CompositionalLayouts-MVP
 //
 //  Created by Tsuruta, Hiromu | ECID on 2021/03/07.
@@ -8,13 +8,14 @@
 import UIKit
 
 // MARK: - Cell
-final class MainBannerCell: UICollectionViewCell {
+final class MainEditCell: UICollectionViewCell {
     
     // MARK: Property
     
     private lazy var imageView: UIImageView = {
-        let image = UIImageView()
-        image.backgroundColor = .lightGray
+        let image = UIImageView(image: UIImage(systemName: "ellipsis"))
+        image.contentMode = .scaleAspectFit
+        image.tintColor = .lightGray
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -26,9 +27,9 @@ final class MainBannerCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
         ])
     }
@@ -38,11 +39,11 @@ final class MainBannerCell: UICollectionViewCell {
     }
 }
 
-// MARK: - Public
-extension MainBannerCell {
+// MARK: - MainCell
+extension MainEditCell: MainCell {
     
-    func configure(with banner: Banner) {
-        guard let url = banner.imageURL else { return }
-        imageView.setImage(with: url)
+    func configure(with entity: Infomation) {
+        // NOP
     }
 }
+

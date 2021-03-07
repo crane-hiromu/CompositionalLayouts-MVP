@@ -25,13 +25,13 @@ struct MainItemTitleSection {
 extension MainItemTitleSection: MainSection {
     
     var numberOfItems: Int {
-        return ViewType.allCases.count
+        ViewType.allCases.count
     }
 
     func layoutSection(_ view: UIView) -> NSCollectionLayoutSection {
         // setting
         let edgeSpacing: CGFloat = 8
-        let rightWidth: CGFloat = 60 // margin+width = 8*2+44 = 60
+        let rightWidth: CGFloat = 30
         let leftWidth = view.bounds.width - rightWidth - edgeSpacing*2
 
         // item
@@ -47,11 +47,13 @@ extension MainItemTitleSection: MainSection {
         // group
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(54)
+            heightDimension: .absolute(44)
         ), subitems: [left, right])
 
         // section
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 4, bottom: 0, trailing: 4)
+        
         return section
     }
 
@@ -61,11 +63,12 @@ extension MainItemTitleSection: MainSection {
         switch type {
         case .title:
             let cell = view.dequeueReusableCell(with: MainTitleCell.self, for: indexPath)
-            cell.configure(with: infomation.title)
+            cell.configure(with: infomation)
             return cell
             
         case .edit:
             let cell = view.dequeueReusableCell(with: MainEditCell.self, for: indexPath)
+            cell.configure(with: infomation)
             return cell
         }
     }
