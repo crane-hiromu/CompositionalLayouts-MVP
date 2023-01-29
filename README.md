@@ -9,4 +9,8 @@
 
 # Demo
 
-<img width="400" alt="Demo" src="https://user-images.githubusercontent.com/24838521/110245572-29a6df00-7fa7-11eb-80b2-b7115eb2be52.png">
+<img width="300" alt="Demo" src="https://user-images.githubusercontent.com/24838521/110245572-29a6df00-7fa7-11eb-80b2-b7115eb2be52.png">
+
+# Desription
+
+Read [here](https://qiita.com/hcrane/items/f16560ebf12b7a12588a) (read in Japanese)
