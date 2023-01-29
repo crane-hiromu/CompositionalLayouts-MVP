@@ -13,4 +13,6 @@
 
 # Desription
 
-Read [here](https://qiita.com/hcrane/items/f16560ebf12b7a12588a) (read in Japanese)
+- [iOSDC2021 - Compositional Layoutsで実現する疎結合な実装](https://speakerdeck.com/hcrane/iosdc2021-compositional-layoutsdeshi-xian-surushu-jie-he-nashi-zhuang)
+- [[Swift] Compositional Layoutsで実現する疎結合な実装](https://qiita.com/hcrane/items/f16560ebf12b7a12588a)
+
